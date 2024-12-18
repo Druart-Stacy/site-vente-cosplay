@@ -5,30 +5,30 @@ Création d'un site d'une boutique fictive ou ont vent des cosplay déja fait ou
 
 ## Structure du projet 📂
 
-.vscode/             # Paramètres de VSCode
-src/
-│── img/             # Dossier des images
-│   ├── accessoire/  # Images d'accessoires
-│   ├── arme/        # Images d'armes
-│   ├── hat/         # Images de chapeaux
-│   ├── livre/       # Images de livres
-│   ├── shows/       # Images de spectacles
-│   ├── tenue/       # Images de tenues
-│   ├── wig/         # Images de perruques
-│   ├── fond.png     # Image de fond principale
-│   ├── promo1.jpg   # Image promotionnelle
-│   ├── taches.webp  # Image taches
-│   └── tree-2458047_1280.png # Image arbre
-│── craft.html       # Page HTML Craft
-│── hat.html         # Page HTML Hat
-│── index.html       # Page d'accueil principale
-│── input.css        # Fichier CSS principal
-│── makup.html
-│── mew.html
-│── ouput.css        # Fichier CSS génére par Tailwing
-│── shows.html
-│── suit.html
-│── wig.html
+.vscode/             # Paramètres de VSCode  
+src/  
+│── img/             # Dossier des images  
+│   ├── accessoire/  # Images d'accessoires  
+│   ├── arme/        # Images d'armes  
+│   ├── hat/         # Images de chapeaux  
+│   ├── livre/       # Images de livres  
+│   ├── shows/       # Images de spectacles  
+│   ├── tenue/       # Images de tenues  
+│   ├── wig/         # Images de perruques  
+│   ├── fond.png     # Image de fond principale  
+│   ├── promo1.jpg   # Image promotionnelle  
+│   ├── taches.webp  # Image de taches  
+│   └── tree-2458047_1280.png # Image d'arbre  
+│── craft.html       # Page HTML "Craft"  
+│── hat.html         # Page HTML "Hat"  
+│── index.html       # Page principale  
+│── input.css        # Fichier CSS principal  
+│── output.css       # Fichier CSS généré par Tailwind CSS  
+│── makup.html       # Page HTML "Makup"  
+│── mew.html         # Page HTML supplémentaire  
+│── shows.html       # Page HTML "Shows"  
+│── suit.html        # Page HTML "Suit"  
+│── wig.html         # Page HTML "Wig"
 
 
 ## Configuration de Tailwind CSS 🚀
