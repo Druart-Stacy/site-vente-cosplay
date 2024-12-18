@@ -38,10 +38,10 @@ Pour utiliser Tailwind CSS dans ce projet, suis ces étapes :
 Assure-toi d'avoir Node.js installé. Ensuite, exécute ces commandes dans ton terminal :
 
 bash
-Copier le code
-npm init -y            # Initialiser le projet Node
+npm init -y                  # Initialise le projet Node.js
 npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init   # Créer le fichier de configuration
+npx tailwindcss init         # Crée le fichier de configuration
+
 2. Configurer Tailwind
 Modifie le fichier tailwind.config.js :
 
