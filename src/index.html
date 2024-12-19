@@ -1,54 +1,48 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
-
   <title>Index</title>
 </head>
-<body class="bg-gray-800">
+<body class="bg-gray-800 text-white">
+
+  <!-- Header Section (assumed to be dynamically injected) -->
   <div id="header"></div>
-<main>
-    <div>
-        <img src="/src/img/fond.png" alt="" class="w-full h-1/4">     
-    </div>
-    <div id="reseau" class="flex justify-center max-md:grid-cols-1 gap-4"> <!-- Added margin top for spacing -->
-        <img src="/src/img/taches.webp" alt="Example Image" class="w-full h-64 object-cover">
-    </div>
-    <div id="promotion" class="grid grid-cols-3 max-md:grid-cols-1 gap-4">
-        <div><img src="/src/img/promo1.jpg" alt="" class="rounded-lg  w-full"></div>
-        <div><img src="/src/img/new.webp" alt="Promotion 50%" class="rounded-lg"></div>
-        <div><img src="/src/img/promotion-50.webp" alt="" class="rounded-lg"></div>
-    </div>
-    
-    <br> <br><br> <br> <br>
-</main>
 
- <!--Footer container-->
- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <main>
+    <!-- Main Image Banner -->
+    <section class="w-full">
+      <img src="/src/img/fond.png" alt="Background Image" class="w-full  object-cover">
+    </section>
 
- <script src="script.js"></script>
-      
-    </body>
-    </html>
+    <!-- Section for Content -->
+    <section id="reseau" class="my-8 flex justify-center gap-4 flex-wrap">
+      <img src="/src/img/taches.webp" alt="Example Image" class="w-full h-64 object-cover rounded-lg">
+    </section>
 
+    <!-- Promotion Section -->
+    <section id="promotion" class="grid grid-cols-3 gap-4 mb-8 sm:grid-cols-1 md:grid-cols-2">
+      <div><img src="/src/img/promo1.jpg" alt="Promo 1" class="rounded-lg w-full object-cover h-full"></div>
+      <div><img src="/src/img/new.webp" alt="Promotion 50%" class="rounded-lg w-full object-cover h-full"></div>
+      <div><img src="/src/img/promotion-50.webp" alt="50% Discount" class="rounded-lg w-full object-cover h-full"></div>
+    </section>
 
+    <!-- Extra Spacing for Clarity -->
+    <div class="space-y-8"></div>
 
+  </main>
 
-    <!-- modifier pour avoir un espace pour pas avoir de br -->
-    <!-- <br><br><br> -->
-    <!-- partie avec les liens vers les articles -->
-  <!-- <h1 class="text-3xl font-bold underline"></h1>
-  <div class="grid grid-cols-6 gap-0 place-content-stretch">
-    <a href="wig.html" class="basis-1/4"><img src="img/wig/paper-1502033_1280.png" alt="" class="w-64 absolute inset-0 h-full object-cover z-10"></a>
-    <a href="shows.html" class="basis-1/4"><img src="img/wig/wig-pink-1.jpg" alt="" class="w-64 absolute inset-0  h-full object-cover z-20 opacity-70"></a>
-    <a href="suit.html" ><img src="img/wig/wig-pink-1.jpg" alt="" class="w-64"></a>
-    <a href="makup.html" ><img src="img/wig/wig-pink-1.jpg" alt=""class="w-64"></a>
-    <a href="hat.html" ><img src="img/wig/wig-pink-1.jpg" alt="" class="w-64"></a>
-    <a href="craft.html" ><img src="img/wig/wig-pink-1.jpg" alt="" class="w-64"></a>
-  </div>
-  -->
-  
- 
+  <!-- Footer Section -->
+  <div id="footer"></div>
+
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- External JavaScript File -->
+  <script src="script.js"></script>
+
+</body>
+</html>
