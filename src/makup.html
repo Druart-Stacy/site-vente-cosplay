@@ -1,16 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <title>Chapeaux/Casque</title>
 </head>
-<body>
-    <!-- debut header -->
+<body class="bg-gray-800">
     <div id="header"></div>
-    <!-- ~fin header -->
+<main class="flex">
+<!-- Section de filtrage -->
+<aside class="w-1/4 bg-gray-600 p-4 border-r border-gray-500">
+  <h2 class="text-xl font-semibold mb-4 text-white">Filtrer par couleur</h2>
+  <ul class="space-y-2">
+    
+    <li>
+      <label class="flex items-center space-x-2  text-white">
+        <input type="checkbox" class="text-blue-500 focus:ring-blue-300" value="blue">
+        <span>***</span>
+      </label>
+    </li>
+    <li>
+      <label class="flex items-center space-x-2  text-white">
+        <input type="checkbox" class="text-red-500 focus:ring-red-300" value="red">
+        <span>***</span>
+      </label>
+    </li>
+    <li>
+      <label class="flex items-center space-x-2  text-white">
+        <input type="checkbox" class="text-green-500 focus:ring-green-300" value="green">
+        <span>***</span>
+      </label>
+    </li>
+    <li>
+      <label class="flex items-center space-x-2  text-white">
+        <input type="checkbox" class="text-green-500 focus:ring-green-300" value="black">
+        <span>***</span>
+      </label>
+    </li>
+    <li>
+      <label class="flex items-center space-x-2  text-white">
+        <input type="checkbox" class="text-green-500 focus:ring-green-300" value="blonde">
+        <span>Autres</span>
+      </label>
+    </li>
+    <li>
+      <label class="flex items-center space-x-2  text-white">
+        <input type="checkbox" class="text-pink-500 focus:ring-pink-300" value="pink">
+        <span>***</span>
+      </label>
+    </li>
+  </ul>
+</aside>
+  <!-- Section des images -->
 
-<!--Footer container-->
-<script src="script.js"></script>
-</body>
-</html>
+  <section class="w-3/4 p-4">
+    <h1 class="text-3xl font-bold text-gray-700 mb-4 text-center">Collection d'accessoires</h1>
+    <div class="grid grid-cols-3 gap-4">
+      <!-- Image 1 -->
+      <div>
+        
+        <div>
+            <img src="***" alt="***" class="w-full cursor-pointer h-[540px]">
+          </div>
+          <!-- js pour l img seconde-peau -->
+         
+        </div>
+      <!-- Image 2 -->
+      <div>
+        <img src="***" alt="****" class="w-full h-[540px] cursor-pointer">
+      </div>
+      <!-- Image 3 -->
+      <div>
+        <img src="***" alt="***" class="w-full h-[540px] cursor-pointer">
+      </div>
+      <!-- Image 4 -->
+      <div>
+        <img src="***" alt="***" class="w-full h-[540px] cursor-pointer">
+      </div>
+      <!-- Image 5 -->
+      <div>
+        <img src="****" alt="***" class="w-full h-[540px] cursor-pointer">
+      </div>
+      <!-- Image 6 -->
+      <div>
+        <img src="***" alt="***" class="w-full h-[540px] cursor-pointer">
+      </div>
+    </div>
+  </section>
+  
+  
+</main>
+
+
+ <!-- Footer Section -->
+ <footer id="footer"></footer>
+ <script src="script.js"></script>
+      
+    </body>
+    </html>
+
+
+
+
+    
+  
+ 

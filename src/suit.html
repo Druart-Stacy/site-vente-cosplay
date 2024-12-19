@@ -4,26 +4,105 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
+  <title>Costumes</title>
 </head>
-<body>
-  <nav class="flex justify-center space-x-4">
-    <a href="/dashboard" class="font-medium px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">Home</a>
-    <a href="/team" class="font-medium px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">Team</a>
-    <a href="/projects" class="font-medium px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">Projects</a>
-    <a href="/reports" class="font-medium px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">Reports</a>
-  </nav>
-  <h1 class="text-3xl font-bold underline">
+<body class="bg-gray-800">
+    <div id="header"></div>
+<main class="flex">
+<!-- Section de filtrage -->
+<aside class="w-1/4 bg-gray-600 p-4 border-r border-gray-500">
+  <h2 class="text-xl font-semibold mb-4 text-white">Filtrer par couleur</h2>
+  <ul class="space-y-2">
     
-  </h1>
-  <div class="grid grid-cols-3">
-    <div><img src="img/wig/wig-cour-red-1.jpg" alt="" class="w-1/2"><h3 class="text-center">wig</h3><p></p></div>
-    <div><img src="img/wig/wig-cour-red-1.jpg" alt="" class="w-1/2"><h3 class="text-center">wig</h3><p></p></div>
-    <div><img src="img/wig/wig-cour-red-1.jpg" alt="" class="w-1/2"><h3 class="text-center">wig</h3><p></p></div>
-    <div><img src="img/wig/wig-cour-red-1.jpg" alt="" class="w-1/2"><h3 class="text-center">wig</h3><p></p></div>
-    <div><img src="img/wig/wig-cour-red-1.jpg" alt="" class="w-1/2"><h3 class="text-center">wig</h3><p></p></div>
-    <div><img src="img/wig/wig-cour-red-1.jpg" alt="" class="w-1/2"><h3 class="text-center">wig</h3><p></p></div>
-    <div><img src="img/wig/wig-cour-red-1.jpg" alt="" class="w-1/2"><h3 class="text-center">wig</h3><p></p></div>
-    <div><img src="img/wig/wig-cour-red-1.jpg" alt="" class="w-1/2"><h3 class="text-center">wig</h3><p></p></div>
-  </div>
-</body>
-</html>
+    <li>
+      <label class="flex items-center space-x-2  text-white">
+        <input type="checkbox" class="text-blue-500 focus:ring-blue-300" value="blue">
+        <span></span>
+      </label>
+    </li>
+    <li>
+      <label class="flex items-center space-x-2  text-white">
+        <input type="checkbox" class="text-red-500 focus:ring-red-300" value="red">
+        <span>Tenue intégrale</span>
+      </label>
+    </li>
+    <li>
+      <label class="flex items-center space-x-2  text-white">
+        <input type="checkbox" class="text-green-500 focus:ring-green-300" value="green">
+        <span>Tenue 2 parties</span>
+      </label>
+    </li>
+    <li>
+      <label class="flex items-center space-x-2  text-white">
+        <input type="checkbox" class="text-green-500 focus:ring-green-300" value="black">
+        <span>Kimonos</span>
+      </label>
+    </li>
+    <li>
+      <label class="flex items-center space-x-2  text-white">
+        <input type="checkbox" class="text-green-500 focus:ring-green-300" value="blonde">
+        <span>Autres</span>
+      </label>
+    </li>
+    <li>
+      <label class="flex items-center space-x-2  text-white">
+        <input type="checkbox" class="text-pink-500 focus:ring-pink-300" value="pink">
+        <span>***</span>
+      </label>
+    </li>
+  </ul>
+</aside>
+  <!-- Section des images -->
+
+  <section class="w-3/4 p-4">
+    <h1 class="text-3xl font-bold text-gray-700 mb-4 text-center">Collection d'accessoires</h1>
+    <div class="grid grid-cols-3 gap-4">
+      <!-- Image 1 -->
+      <div>
+        
+        <div>
+            <img src="img/tenue/tenue-b (1).jpg" alt="costume de Bleatch" class="w-full cursor-pointer h-[540px]">
+          </div>
+          <!-- js pour l img seconde-peau -->
+         
+        </div>
+      <!-- Image 2 -->
+      <div>
+        <img src="img/tenue/tenue-b (2).jpg" alt="costume de Deadpool" class="w-full h-[540px] cursor-pointer">
+      </div>
+      <!-- Image 3 -->
+      <div>
+        <img src="img/tenue/tenue-b (3).jpg" alt="costume de Natsu fairy tail" class="w-full h-[540px] cursor-pointer">
+      </div>
+      <!-- Image 4 -->
+      <div>
+        <img src="img/tenue/tenue-complete (1).jpg" alt="costume de Akane" class="w-full h-[540px] cursor-pointer">
+      </div>
+      <!-- Image 5 -->
+      <div>
+        <img src="img/tenue/tenue-complete (1).webp" alt="costume de Jujutsu Kaimmense" class="w-full h-[540px] cursor-pointer">
+      </div>
+      <!-- Image 6 -->
+      <div>
+        <img src="img/tenue/tenue-complete (3).jpg" alt="Costume de vendredi 13" class="w-full h-[540px] cursor-pointer">
+      </div>
+    </div>
+  </section>
+  
+  
+</main>
+
+
+ <!-- Footer Section -->
+ <footer id="footer"></footer>
+ <script src="script.js"></script>
+      
+    </body>
+    </html>
+
+
+
+
+    
+  
+ 
