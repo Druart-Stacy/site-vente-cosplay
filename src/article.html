@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <title>Article</title>
+</head>
+<body class="bg-gray-800 text-white">
+  <main class="p-8">
+    <div class="max-w-4xl mx-auto bg-gray-700 p-6 rounded-lg shadow-lg">
+      <h1 class="text-3xl font-bold mb-4 text-center article-title">Article</h1>
+      <div class="flex flex-col items-center">
+        <!-- Image -->
+        <img src="" alt="Article" class="article-image w-1/2 mb-4 rounded-lg">
+        <!-- Prix -->
+        <p class="text-2xl font-semibold mb-4">Prix : <span class="article-price"></span></p>
+      </div>
+    </div>
+  </main>
+  <script>
+    // Script pour extraire et afficher les informations depuis l'URL
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+
+      // Récupération des paramètres
+      const price = params.get('price') || 'Prix non spécifié';
+      const imgSrc = params.get('img') || '';
+      const alt = params.get('alt') || 'Article';
+
+      // Mise à jour de la page
+      document.querySelector('.article-image').src = imgSrc;
+      document.querySelector('.article-image').alt = alt;
+      document.querySelector('.article-title').textContent = alt;
+      document.querySelector('.article-price').textContent = price + '€';
+    });
+  </script>
+</body>
+</html>
