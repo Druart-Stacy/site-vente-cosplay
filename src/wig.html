@@ -43,16 +43,30 @@
       <li>
         <label class="flex items-center space-x-2  text-white">
           <input type="checkbox" class="text-green-500 focus:ring-green-300" value="black">
-          <span>noir</span>
+          <span>Noir</span>
         </label>
       </li>
       <li>
         <label class="flex items-center space-x-2  text-white">
           <input type="checkbox" class="text-green-500 focus:ring-green-300" value="blonde">
-          <span>blonde</span>
+          <span>Blonde</span>
         </label>
       </li>
+      <li>
+        <label class="flex items-center space-x-2  text-white">
+          <input type="checkbox" class="text-green-500 focus:ring-green-300" value="orange">
+          <span>Orange</span>
+        </label>
+      </li>
+      <li>
+        <label class="flex items-center space-x-2  text-white">
+          <input type="checkbox" class="text-green-500 focus:ring-green-300" value="mauve">
+          <span>Mauve</span>
+        </label>
+      </li>
+
     </ul>
+   
   </aside>
 
   <!-- Section des images -->
@@ -60,7 +74,7 @@
     <h1 class="text-3xl font-bold text-white mb-4 text-center">Collection de Perruques</h1>
     <div class="grid grid-cols-3 gap-4">
       <!-- Image 1 -->
-      <div>
+      <div class="item black">
         <a href="article.html"><img src="img/wig/wig-black-traisse.webp" alt="Perruque noire tressée" 
              class="w-full cursor-pointer" id="article-image"
              data-price="12.00€" 
@@ -70,7 +84,7 @@
         <span class="text-white text-xl article-price"> Prix :12€</span>
       </div>
       <!-- Image 2 -->
-      <div>
+      <div class="item blonde">
         <a href="article.html">
         <img src="img/wig/wig-blonde-court.webp" alt="Perruque rose" class="w-full"
         data-price="8.00€" 
@@ -80,34 +94,34 @@
       <p class="text-white text-xl"> Prix :8€</p>
       </div>
       <!-- Image 3 -->
-      <div>
+      <div class="item blue">
         <img src="img/wig/wig-blue-1-tresse-longue.webp" alt="Perruque bleu" class="w-full">
         <p class="text-white text-xl"> Prix :35€</p>
       </div>
       <!-- Image 4 -->
-      <div>
+      <div class="item pink">
         <img src="img/wig/wig-pink-1.jpg" alt="Perruque rose" class="w-full">
         <p class="text-white text-xl"> Prix :5€</p>
       </div>
       <!-- Image 5 -->
-      <div>
+      <div class="item orange">
         <img src="img/wig/wig-orange-court.webp" alt="Perruque orange" class="w-full">
         <p class="text-white text-xl"> Prix :8€</p>
       </div>
       <!-- Image 6 -->
-      <div>
+      <div class="item pink">
         <img src="img/wig/wig-pink-court.jpg" alt="Perruque rose" class="w-full h-auto">
         <p class="text-white text-xl"> Prix :10€</p>
       </div>
-      <div>
+      <div class="item pink">
         <img src="img/wig/wig-pink-longue.jpg" alt="Perruque rose" class="w-full  h-[453px] object-cover object-top">
         <p class="text-white text-xl"> Prix :17€</p>
       </div>
-      <div>
+      <div class="item blonde">
         <img src="img/wig/wig-blonde-longue.webp" alt="Perruque rose" class="w-full">
         <p class="text-white text-xl"> Prix :13€</p>
       </div>
-      <div>
+      <div class="item mauve">
         <img src="img/wig/wig-mauve-longue.jfif" alt="Perruque rose" class="w-full">
         <p class="text-white text-xl"> Prix :15€</p>
       </div>
@@ -118,9 +132,10 @@
 
 
  <div id="footer"></div>
- <script src="script.js"></script>
-    </body>
-    </html>
+    <script src="/src/js/script.js"></script>
+    <script src="/src/js/filtres.js"></script>
+</body>
+</html>
 
 
 

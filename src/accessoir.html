@@ -1,5 +1,5 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,119 +7,98 @@
   <title>Accessoires</title>
 </head>
 <body class="bg-gray-800">
-    <div id="header"></div>
-    <section class="h-[70px]"></section>
-<main class="flex">
-<!-- Section de filtrage -->
-<aside class="w-1/4 bg-gray-600 p-4 border-r border-gray-500">
-  <h2 class="text-xl font-semibold mb-4 text-white">Filtrer par couleur</h2>
-  <ul class="space-y-2">
-    
-    <li>
-      <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-blue-500 focus:ring-blue-300" value="blue">
-        <span>Torse/Poitrine</span>
-      </label>
-    </li>
-    <li>
-      <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-red-500 focus:ring-red-300" value="red">
-        <span>Binder</span>
-      </label>
-    </li>
-    <li>
-      <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-green-500 focus:ring-green-300" value="green">
-        <span>Gaine</span>
-      </label>
-    </li>
-    <li>
-      <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-green-500 focus:ring-green-300" value="black">
-        <span>Seconde peau</span>
-      </label>
-    </li>
-    <li>
-      <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-green-500 focus:ring-green-300" value="blonde">
-        <span>Autres</span>
-      </label>
-    </li>
-    <li>
-      <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-pink-500 focus:ring-pink-300" value="pink">
-        <span>***</span>
-      </label>
-    </li>
-  </ul>
-</aside>
-  <!-- Section des images -->
+  <!-- En-tête -->
+  <div id="header"></div>
 
-  <section class="w-3/4 p-4">
-    <h1 class="text-3xl font-bold text-white mb-4 text-center">Collection d'accessoires</h1>
-    <div class="grid grid-cols-3 gap-4">
-      <!-- Image 1 -->
-      <div>
-        
-        <div>
-            <img id="seconde-peau" src="img/accessoire/seconde-peau-noir.jpg" alt="Seconde Peau Rouge" class="w-full cursor-pointer h-[540px]">
-            <p class="text-white text-xl"> Prix :10€</p>
-          </div>
-          <!-- js pour l img seconde-peau -->
-          <script>
-            // Gestionnaire d'événement pour changer la source de l'image
-            document.getElementById('seconde-peau').addEventListener('click', function () {
-              // Vérifie la couleur actuelle de l'image et bascule la couleur
-              if (this.src.includes('seconde-peau-rouge.png')) {
-                this.src = 'img/accessoire/seconde-peau-noir.jpg'; // Change en noir
-              } else {
-                this.src = 'img/accessoire/seconde-peau-rouge.png'; // Revient en rouge
-              }
-            });
-          </script>
+  <!-- Espacement sous l'en-tête -->
+  <section class="h-[70px]"></section>
+
+  <main class="flex">
+    <!-- Section de filtrage -->
+    <aside class="w-1/4 bg-gray-600 p-4 border-r border-gray-500">
+      <h2 class="text-xl font-semibold mb-4 text-white">Filtrer par type</h2>
+      <ul class="space-y-2">
+        <!-- Liste des filtres -->
+        <li>
+          <label class="flex items-center space-x-2 text-white">
+            <input type="checkbox" value="Torse/Poitrine">
+            <span>Torse/Poitrine</span>
+          </label>
+        </li>
+        <li>
+          <label class="flex items-center space-x-2 text-white">
+            <input type="checkbox" value="Binder">
+            <span>Binder</span>
+          </label>
+        </li>
+        <li>
+          <label class="flex items-center space-x-2 text-white">
+            <input type="checkbox" value="Gaine">
+            <span>Gaine</span>
+          </label>
+        </li>
+        <li>
+          <label class="flex items-center space-x-2 text-white">
+            <input type="checkbox" value="seconde-peau">
+            <span>Seconde peau</span>
+          </label>
+        </li>
+        <li>
+          <label class="flex items-center space-x-2 text-white">
+            <input type="checkbox" value="Autres">
+            <span>Autres</span>
+          </label>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Section des accessoires -->
+    <section class="w-3/4 p-4">
+      <h1 class="text-3xl font-bold text-white mb-4 text-center">Collection d'accessoires</h1>
+      <div class="grid grid-cols-3 gap-4">
+        <!-- Articles -->
+        <div class="item Torse/Poitrine">
+          <img src="img/accessoire/torse.jpg" alt="Torse" class="w-full h-[540px] cursor-pointer">
+          <p class="text-white text-xl">Prix : 65€</p>
         </div>
-      <!-- Image 2 -->
-      <div>
-        <img src="img/accessoire/acce (2).jpg" alt="binder de poitrine" class="w-full h-[540px] cursor-pointer">
-        <p class="text-white text-xl"> Prix :4€</p>
+        <div class="item Binder">
+          <img src="img/accessoire/acce (2).jpg" alt="Binder" class="w-full h-[540px] cursor-pointer">
+          <p class="text-white text-xl">Prix : 4€</p>
+        </div>
+        <div class="item Gaine">
+          <img src="img/accessoire/acce (3).jpg" alt="Short Gaine" class="w-full h-[540px] cursor-pointer">
+          <p class="text-white text-xl">Prix : 7€</p>
+        </div>
+        <div class="item seconde-peau">
+          <img id="seconde-peau" src="img/accessoire/seconde-peau-noir.jpg" alt="Seconde Peau Noir" class="w-full cursor-pointer h-[540px]">
+          <p class="text-white text-xl">Prix : 10€</p>
+        </div>
+        <div class="item Autres">
+          <img src="img/accessoire/acce (4).jpg" alt="Épaule plumes" class="w-full h-[540px] cursor-pointer">
+          <p class="text-white text-xl">Prix : 15€</p>
+        </div>
+        <div class="item Torse/Poitrine">
+          <img src="img/accessoire/acce (5).jpg" alt="Binder de poitrine" class="w-full h-[540px] cursor-pointer">
+          <p class="text-white text-xl">Prix : 4€</p>
+        </div>
       </div>
-      <!-- Image 3 -->
-      <div>
-        <img src="img/accessoire/acce (3).jpg" alt="short gaine" class="w-full h-[540px] cursor-pointer">
-        <p class="text-white text-xl"> Prix :7€</p>
-      </div>
-      <!-- Image 4 -->
-      <div>
-        <img src="img/accessoire/acce (4).jpg" alt="épaule plumes" class="w-full h-[540px] cursor-pointer">
-        <p class="text-white text-xl"> Prix :15€</p>
-      </div>
-      <!-- Image 5 -->
-      <div>
-        <img src="img/accessoire/acce (5).jpg" alt="Pointrine en silicone" class="w-full h-[540px] cursor-pointer">
-        <p class="text-white text-xl"> Prix :65€</p>
-      </div>
-      <!-- Image 6 -->
-      <div>
-        <img src="img/accessoire/torse.jpg" alt="Torse" class="w-full h-[540px] cursor-pointer">
-        <p class="text-white text-xl"> Prix :65€</p>
-      </div>
-    </div>
-  </section>
-  
-  
-</main>
 
+      <!-- Script pour changer la couleur de l'image -->
+      <script>
+        document.getElementById('seconde-peau').addEventListener('click', function () {
+          this.src = this.src.includes('seconde-peau-rouge.png') 
+            ? 'img/accessoire/seconde-peau-noir.jpg' 
+            : 'img/accessoire/seconde-peau-rouge.png';
+        });
+      </script>
+    </section>
+  </main>
 
- <!-- Footer Section -->
- <footer id="footer"></footer>
- <script src="script.js"></script>
-      
-    </body>
-    </html>
+  <!-- Pied de page -->
+  <footer id="footer"></footer>
 
-
-
-
-    
-  
- 
+  <!-- Scripts JS -->
+  <script src="/src/js/script.js"></script>
+  <script src="/src/js/filtres.js"></script>
+</body>
+</html>

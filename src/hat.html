@@ -4,50 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
-  <title>Chapeaux/Casques</title>
+  <title>Wig</title>
 </head>
 <body class="bg-gray-800">
-    <div id="header"></div>
-    <section class="h-[70px]"></section>
+  <div id="header"></div>
+  <section class="h-[70px]"></section>
 <main class="flex">
 <!-- Section de filtrage --> 
 <aside class="w-1/4 bg-gray-600 p-4 border-r border-gray-500">
-  <h2 class="text-xl font-semibold mb-4 text-white">Filtrer par couleur</h2>
+  <h2 class="text-xl font-semibold mb-4 text-white">Filtrer par types</h2>
   <ul class="space-y-2">
     
     <li>
       <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-blue-500 focus:ring-blue-300" value="blue">
+        <input type="checkbox" class="text-blue-500 focus:ring-blue-300" value="casquettes">
         <span>Casquettes</span>
       </label>
     </li>
     <li>
       <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-red-500 focus:ring-red-300" value="red">
+        <input type="checkbox" class="text-red-500 focus:ring-red-300" value="casques">
         <span>Casques</span>
       </label>
     </li>
     <li>
       <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-green-500 focus:ring-green-300" value="green">
+        <input type="checkbox" class="text-green-500 focus:ring-green-300" value="cornes">
         <span>Cornes</span>
       </label>
     </li>
     <li>
       <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-green-500 focus:ring-green-300" value="black">
+        <input type="checkbox" class="text-green-500 focus:ring-green-300" value="cagoules">
         <span>Cagoules</span>
       </label>
     </li>
     <li>
       <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-green-500 focus:ring-green-300" value="blonde">
+        <input type="checkbox" class="text-green-500 focus:ring-green-300" value="chapeaux">
         <span>Chapeaux</span>
       </label>
     </li>
     <li>
       <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-pink-500 focus:ring-pink-300" value="pink">
+        <input type="checkbox" class="text-pink-500 focus:ring-pink-300" value="Autres">
         <span>Autres</span>
       </label>
     </li>
@@ -61,7 +61,7 @@
       <!-- Image 1 -->
       <div>
         
-        <div>
+        <div class="item cornes">
             <img src="img/hat/photo_2024-12-17_13-57-09 (2).jpg" alt="cornes" class="w-full cursor-pointer h-[540px]">
             <p class="text-white text-xl"> Prix :45€</p>
           </div>
@@ -69,40 +69,39 @@
          
         </div>
       <!-- Image 2 -->
-      <div>
+      <div class="item chapeaux">
         <img src="img/hat/photo_2024-12-17_13-57-09 (3).jpg" alt="chapeau de Luffy" class="w-full h-[540px] cursor-pointer">
         <p class="text-white text-xl"> Prix :25€</p>
       </div>
       <!-- Image 3 -->
-      <div>
+      <div class="item chapeaux">
         <img src="img/hat/photo_2024-12-17_13-57-09 (4).jpg" alt="chapeau One piece" class="w-full h-[540px] cursor-pointer">
         <p class="text-white text-xl"> Prix :50€</p>
       </div>
       <!-- Image 4 -->
-      <div>
+      <div class="item casquettes">
         <img src="img/hat/photo_2024-12-17_13-57-09.jpg" alt="casquette Marty" class="w-full h-[540px] cursor-pointer">
         <p class="text-white text-xl"> Prix :20€</p>
       </div>
       <!-- Image 5 -->
-      <div>
+      <div class="item cornes">
         <img src="img/hat/photo_2024-12-17_14-51-48 (2).jpg" alt="cornes de Loky" class="w-full h-[540px] cursor-pointer">
         <p class="text-white text-xl"> Prix :25€</p>
       </div>
       <!-- Image 6 -->
-      <div>
+      <div class="item cagoules">
         <img src="img/hat/photo_2024-12-17_14-51-48.jpg" alt="cagoule de DeadpoolS" class="w-full h-[540px] cursor-pointer">
         <p class="text-white text-xl"> Prix :50€</p>
       </div>
     </div>
   </section>
-  
-  
 </main>
 
 
  <!-- Footer Section -->
  <footer id="footer"></footer>
- <script src="script.js"></script>
+ <script src="/src/js/script.js"></script>
+ <script src="/src/js/filtres.js"></script>
       
     </body>
     </html>
