@@ -53,14 +53,23 @@
     </aside>
 
     <!-- Section des accessoires -->
-    <section class="w-3/4 p-4">
+    <section class="w-full p-4">
       <h1 class="text-3xl font-bold text-white mb-4 text-center">Collection d'accessoires</h1>
       <div class="grid grid-cols-3 gap-4">
         <!-- Articles -->
-        <div class="item Torse/Poitrine">
-          <img src="img/accessoire/torse.jpg" alt="Torse" class="w-full h-[540px] cursor-pointer">
+        <div class="item torse-poitrine">
+          <img 
+            src="img/accessoire/torse.jpg" 
+            alt="Torse" 
+            class="w-full h-[540px] cursor-pointer"
+            data-title="Torse"
+            data-price="65€"
+            data-description="Torse nu idéal pour cosplayer Grey ou encore Hashibira Inosuke."
+            onclick="redirectToArticle(this)"
+          >
           <p class="text-white text-xl">Prix : 65€</p>
         </div>
+        
         <div class="item Binder">
           <img src="img/accessoire/acce (2).jpg" alt="Binder" class="w-full h-[540px] cursor-pointer">
           <p class="text-white text-xl">Prix : 4€</p>
@@ -99,6 +108,6 @@
 
   <!-- Scripts JS -->
   <script src="/js/script.js"></script>
-  <script src="/js/filtres.js"></script>
+  <script src="/src/js/filtres.js"></script>
 </body>
 </html>

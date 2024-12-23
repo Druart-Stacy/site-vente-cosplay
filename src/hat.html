@@ -57,7 +57,7 @@
 
   <section class="w-3/4 p-4">
     <h1 class="text-3xl font-bold text-white mb-4 text-center">Collection d'accessoires</h1>
-    <div class="grid grid-cols-3 gap-4">
+    <div id="items-container" class="grid grid-cols-3 gap-4">
       <!-- Image 1 -->
       <div>
         
@@ -80,7 +80,14 @@
       </div>
       <!-- Image 4 -->
       <div class="item casquettes">
-        <img src="img/hat/photo_2024-12-17_13-57-09.jpg" alt="casquette Marty" class="w-full h-[540px] cursor-pointer">
+        <img src="img/hat/photo_2024-12-17_13-57-09.jpg" 
+        alt="casquette Marty" 
+        class="w-full h-[540px] cursor-pointer"
+        data-title="****"
+        data-price="***€"
+        data-description="Une perruque ****."
+        onclick="redirectToArticle(this)"
+        >
         <p class="text-white text-xl"> Prix :20€</p>
       </div>
       <!-- Image 5 -->
@@ -100,8 +107,8 @@
 
  <!-- Footer Section -->
  <footer id="footer"></footer>
- <script src="/js/script.js"></script>
- <script src="/js/filtres.js"></script>
+ <script src="/src/js/script.js"></script>
+ <script src="/src/js/filtres.js"></script>
       
     </body>
     </html>
