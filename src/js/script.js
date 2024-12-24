@@ -36,11 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Récupération des paramètres de l'URL
     const params = new URLSearchParams(window.location.search);
     const price = params.get('price') || 'Prix non spécifié'; // Prix
-const type = params.get('type') || 'accessory'; // Type d'article
-const sizes = params.get('sizes') || ''; // Tailles ou pointures
-const availability = params.get('availability') || 'Non spécifiée'; // Disponibilité
-const alt = params.get('alt') || 'Article'; // Description
-const imgSrc = params.get('imgSrc') || 'default/image.jpg'; // Image source par défaut
+    const type = params.get('type') || 'accessory'; // Type d'article
+    const sizes = params.get('sizes') || ''; // Tailles ou pointures
+    const availability = params.get('availability') || 'Non spécifiée'; // Disponibilité
+    const alt = params.get('alt') || 'Article'; // Description
+    const imgSrc = params.get('imgSrc') || 'default/image.jpg'; // Image source par défaut
 
     // Sélection des éléments de la page
     const articleImage = document.querySelector('.article-image');
@@ -51,7 +51,7 @@ const imgSrc = params.get('imgSrc') || 'default/image.jpg'; // Image source par 
     const sizesContainer = document.querySelector('.article-sizes');
     const sizesTitle = document.querySelector('.sizes-title');
     const links = document.querySelectorAll('.image-link');
-    const imageElement = document.getElementById('dynamic-image');
+    const simageElement = document.getElementById('dynamic-image');
   
     // Mise à jour de l'image et des informations de l'article
     articleImage.src = imgSrc;
@@ -62,7 +62,7 @@ const imgSrc = params.get('imgSrc') || 'default/image.jpg'; // Image source par 
   
     // Gestion des tailles ou pointures
     if (type === 'suit' || type === 'shoe') {
-      if (sizes) {
+     if (sizes) {
         sizesSection.classList.remove('hidden');
         sizesTitle.textContent = type === 'suit' ? 'Tailles disponibles :' : 'Pointures disponibles :';
         sizesContainer.innerHTML = ''; // Supprime les anciens éléments
@@ -86,4 +86,3 @@ const imgSrc = params.get('imgSrc') || 'default/image.jpg'; // Image source par 
       });
     });
   });
-  
