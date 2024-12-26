@@ -1,106 +1,154 @@
 <!doctype html>
-<html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
-  <title>maquillages</title>
+  <title>Maquillages</title>
 </head>
 <body class="bg-gray-800">
     <div id="header"></div>
     <section class="h-[70px]"></section>
-<main class="flex">
-<!-- Section de filtrage -->
-<aside class="w-1/4 bg-gray-600 p-4 border-r border-gray-500">
-  <h2 class="text-xl font-semibold mb-4 text-white">Filtrer par couleur</h2>
-  <ul class="space-y-2">
     
-    <li>
-      <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-blue-500 focus:ring-blue-300" value="pinceau">
-        <span>Pinceaux</span>
-      </label>
-    </li>
-    <li>
-      <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-red-500 focus:ring-red-300" value="fond-teint">
-        <span>Fond teint</span>
-      </label>
-    </li>
-    <li>
-      <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-green-500 focus:ring-green-300" value="eponge-maquillage">
-        <span>Eponge maquillage</span>
-      </label>
-    </li>
-    <li>
-      <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-green-500 focus:ring-green-300" value="lotion-nettoyante">
-        <span>Lotion nettoyante</span>
-      </label>
-    </li>
-    <li>
-      <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-pink-500 focus:ring-pink-300" value="peinture-corporelle">
-        <span>Peinture corporelle</span>
-      </label>
-    </li>
-    <li>
-      <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-green-500 focus:ring-green-300" value="autres">
-        <span>Autres</span>
-      </label>
-    </li>
+    <main class="flex">
+      <!-- Section de filtrage -->
+      <aside class="w-1/4 bg-gray-600 p-4 border-r border-gray-500">
+        <h2 class="text-xl font-semibold mb-4 text-white">Filtrer par couleur</h2>
+        <ul class="space-y-2">
+          <li>
+            <label class="flex items-center space-x-2 text-white">
+              <input type="checkbox" class="text-blue-500 focus:ring-blue-300" value="pinceau">
+              <span>Pinceaux</span>
+            </label>
+          </li>
+          <li>
+            <label class="flex items-center space-x-2 text-white">
+              <input type="checkbox" class="text-red-500 focus:ring-red-300" value="fond-teint">
+              <span>Fond teint</span>
+            </label>
+          </li>
+          <li>
+            <label class="flex items-center space-x-2 text-white">
+              <input type="checkbox" class="text-green-500 focus:ring-green-300" value="eponge-maquillage">
+              <span>Eponge maquillage</span>
+            </label>
+          </li>
+          <li>
+            <label class="flex items-center space-x-2 text-white">
+              <input type="checkbox" class="text-green-500 focus:ring-green-300" value="lotion-nettoyante">
+              <span>Lotion nettoyante</span>
+            </label>
+          </li>
+          <li>
+            <label class="flex items-center space-x-2 text-pink-500 focus:ring-pink-300" value="peinture-corporelle">
+              <input type="checkbox">
+              <span>Peinture corporelle</span>
+            </label>
+          </li>
+          <li>
+            <label class="flex items-center space-x-2 text-white">
+              <input type="checkbox" class="text-green-500 focus:ring-green-300" value="autres">
+              <span>Autres</span>
+            </label>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Section des images -->
+      <section class="w-3/4 p-4">
+        <h1 class="text-3xl font-bold text-white mb-4 text-center">Makeup</h1>
+        <div id="items-container" class="grid grid-cols-3 gap-4">
+          <!-- Image 1 -->
+          <div class="item fond-teint">
+            <img src="img/makup/aqua-noir.jpg" 
+                 alt="fond teint 1 couleur" 
+                 class="w-full h-[540px] cursor-pointer"
+                 data-title="Fond teint"
+                 data-price="15.00€"
+                 data-description="Fond teint"
+                 onclick="redirectToArticle(this)">
+          </div>
+          <!-- Image 2 -->
+          <div class="item autres">
+            <img src="img/makup/malette-a-maquillage-argentee.jpg" 
+                 alt="Malette maquillage" 
+                 class="w-full h-[540px] cursor-pointer"
+                 data-title="Malette à maquillage"
+                 data-price="15.00€"
+                 data-description="Malette à maquillage"
+                 onclick="redirectToArticle(this)">
+          </div>
+          <!-- Image 3 -->
+          <div class="item fond-teint">
+            <img src="img/makup/palette-fard-creme-6-couleurs (1).jpg" 
+                 alt="Fond teint 6 couleurs" 
+                 class="w-full h-[540px] cursor-pointer"
+                 data-title="Fond teint 6 couleurs"
+                 data-price="15.00€"
+                 data-description="Fond teint 6 couleurs"
+                 onclick="redirectToArticle(this)">
+          </div>
+          <!-- Image 4 -->
+          <div class="item fond-teint">
+            <img src="img/makup/palette-fard-creme-6-couleurs.jpg" 
+                 alt="Fond teint 6 couleurs" 
+                 class="w-full h-[540px] cursor-pointer"
+                 data-title="Fond teint 6 couleurs"
+                 data-price="15.00€"
+                 data-description="Fond teint 6 couleurs"
+                 onclick="redirectToArticle(this)">
+          </div>
+          <!-- Image 5 -->
+          <div class="item pinceau">
+            <img src="img/makup/pinceau-n18.jpg"
+                 alt="Pinceau taille 18" 
+                 class="w-full h-[540px] cursor-pointer"
+                 data-title="Pinceau taille 18"
+                 data-price="15.00€"
+                 data-description="3 pinceaux taille 18"
+                 onclick="redirectToArticle(this)">
+          </div>
+          <!-- Image 6 -->
+          <div class="item pinceau">
+            <img src="img/makup/pinceau-n28.jpg" 
+                 alt="Pinceau taille 28" 
+                 class="w-full h-[540px] cursor-pointer"
+                 data-title="Pinceau taille 28"
+                 data-price="15.00€"
+                 data-description="3 pinceaux taille 28"
+                 onclick="redirectToArticle(this)">
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // Fonction de redirection avec des paramètres dynamiques
+      function redirectToArticle(imageElement) {
+        const title = imageElement.getAttribute('data-title');
+        const price = imageElement.getAttribute('data-price');
+        const description = imageElement.getAttribute('data-description');
+        const imageSrc = imageElement.src;
+
+        // Construction de l'URL avec les paramètres
+        const params = new URLSearchParams({
+          title,
+          price,
+          description,
+          img: imageSrc, // Notez l'utilisation de "img" pour cohérence
+        });
+
+        // Redirection vers la page dynamique "article.html"
+        window.location.href = `article.html?${params.toString()}`;
+      }
+    </script>
     
-  </ul>
-</aside>
-  <!-- Section des images -->
+    <!-- Footer Section -->
+    <footer id="footer"></footer>
 
-  <section class="w-3/4 p-4">
-    <h1 class="text-3xl font-bold text-white mb-4 text-center">Collection de maquillages</h1>
-    <div class="grid grid-cols-3 gap-4">
-      <!-- Image 1 -->
-      <div class="item fond-teint">
-         <img src="img/makup/aqua-noir.jpg" alt="fond tein 1 couleur" class="w-full h-[540px]  cursor-pointer">
-      </div>
-      <!-- Image 2 -->
-      <div class="item autres">
-        <img src="img/makup/malette-a-maquillage-argentee.jpg" alt="malette maquillage " class="w-full h-[540px] cursor-pointer">
-      </div>
-      <!-- Image 3 -->
-      <div class="item fond-teint">
-        <img src="img/makup/palette-fard-creme-6-couleurs (1).jpg" alt="fond teint 6 couleurs" class="w-full h-[540px] cursor-pointer">
-      </div>
-      <!-- Image 4 -->
-      <div class="item fond-teint">
-        <img src="img/makup/palette-fard-creme-6-couleurs.jpg" alt="fond teint 6 couleurs" class="w-full h-[540px] cursor-pointer">
-      </div>
-      <!-- Image 5 -->
-      <div class="item pinceau">
-        <img src="img/makup/pinceau-n18.jpg" alt="pinceau 18" class="w-full h-[540px] cursor-pointer">
-      </div>
-      <!-- Image 6 -->
-      <div class="item pinceau">
-        <img src="img/makup/pinceau-n28.jpg" alt="pinceau 28" class="w-full h-[540px] cursor-pointer">
-      </div>
-    </div>
-  </section>
-  
-  
-</main>
+    <!-- Footer container -->
+    <script src="js/script.js"></script>
+    <script src="js/filtres.js"></script>
 
-
- <!-- Footer Section -->
- <footer id="footer"></footer>
- <script src="/js/script.js"></script>
- <script src="/js/filtres.js"></script>
-      
-    </body>
-    </html>
-
-
-
-
-    
-  
- 
+</body>
+</html>
