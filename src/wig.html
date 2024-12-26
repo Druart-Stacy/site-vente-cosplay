@@ -7,15 +7,18 @@
   <title>Collection de Perruques</title>
 </head>
 <body class="bg-gray-800">
+  <!-- Header Section -->
   <div id="header"></div>
+
+  <!-- Spacer Section -->
   <section class="h-[70px]"></section>
 
   <main class="flex">
-    <!-- Section de filtrage -->
+    <!-- Filtrage Section (Left Sidebar) -->
     <aside class="w-1/4 bg-gray-600 p-4 border-r border-gray-500">
       <h2 class="text-xl font-semibold mb-4 text-white">Filtrer par couleur</h2>
       <ul class="space-y-2">
-        <!-- Boucle pour éviter la répétition -->
+        <!-- List of Filters -->
         <li>
           <label class="flex items-center space-x-2 text-white">
             <input type="checkbox" class="filter-checkbox" value="black">
@@ -55,13 +58,14 @@
       </ul>
     </aside>
 
-    <!-- Section des articles -->
+    <!-- Article Section (Main Content) -->
     <section class="w-full p-4">
       <h1 class="text-3xl font-bold text-white mb-4 text-center">Collection de Perruques</h1>
+      
+      <!-- Items Container (Grid for Products) -->
       <div id="items-container" class="grid grid-cols-3 gap-4">
-        <!-- Exemple d'article -->
+        <!-- Article 1 (Black Wig) -->
         <div class="item black">
-          <!-- <h1 class="article-title">Wig noire tré </h1> -->
           <img 
             src="img/wig/wig-black-traisse.webp" 
             alt="Perruque noire tressée" 
@@ -73,7 +77,9 @@
           >
           <p class="text-white text-xl">Prix : 12€</p>
         </div>
-        <div class="item blonde">c
+
+        <!-- Article 2 (Blonde Wig) -->
+        <div class="item blonde">
           <img 
             src="img/wig/wig-blonde-court.webp" 
             alt="Perruque blonde courte" 
@@ -85,6 +91,8 @@
           >
           <p class="text-white text-xl">Prix : 8€</p>
         </div>
+
+        <!-- Article 3 (Blue Wig) -->
         <div class="item blue">
           <img 
             src="img/wig/wig-blue-1-tresse-longue.webp" 
@@ -97,6 +105,8 @@
           >
           <p class="text-white text-xl">Prix : 35€</p>
         </div>
+
+        <!-- Article 4 (Pink Wig) -->
         <div class="item pink">
           <img 
             src="img/wig/wig-pink-1.jpg" 
@@ -113,6 +123,7 @@
     </section>
   </main>
 
+  <!-- JavaScript for Article Redirection -->
   <script>
     // Fonction de redirection avec des paramètres dynamiques
     function redirectToArticle(imageElement) {
@@ -134,7 +145,10 @@
     }
   </script>
 
+  <!-- Footer Section -->
   <div id="footer"></div>
+
+  <!-- External JavaScript Files -->
   <script src="/js/script.js"></script>
   <script src="/src/js/filtres.js"></script>
 </body>
