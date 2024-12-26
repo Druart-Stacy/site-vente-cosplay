@@ -71,43 +71,82 @@
         </div>
         
         <div class="item Binder">
-          <img src="img/accessoire/acce (2).jpg" alt="Binder" class="w-full h-[540px] cursor-pointer">
+          <img src="img/accessoire/acce (2).jpg" 
+          alt="Binder" 
+          class="w-full h-[540px] cursor-pointer"
+          data-title="Binder"
+          data-price="4€"
+          data-description="pièce de sous-vêtement moulante utilisée pour aplatir la poitrine de manière efficace et indolore."
+          onclick="redirectToArticle(this)"
+          
+          >
           <p class="text-white text-xl">Prix : 4€</p>
         </div>
         <div class="item Gaine">
-          <img src="img/accessoire/acce (3).jpg" alt="Short Gaine" class="w-full h-[540px] cursor-pointer">
+          <img src="img/accessoire/acce (3).jpg" 
+          alt="Short Gaine" 
+          class="w-full h-[540px] cursor-pointer"
+          data-title="la gaine "
+          data-price="7€"
+          data-description="La gaine minceur est un vêtement permettant d'affiner et raffermir votre silhouette. Elle permet de sculpter instantanément votre taille. Elle va aplatir le ventre/fesses et participer au bon maintien de votre dos.2."
+          onclick="redirectToArticle(this)"
+          >
           <p class="text-white text-xl">Prix : 7€</p>
         </div>
         <div class="item seconde-peau">
-          <img id="seconde-peau" src="img/accessoire/seconde-peau-noir.jpg" alt="Seconde Peau Noir" class="w-full cursor-pointer h-[540px]">
+          <img id="seconde-peau" src="img/accessoire/seconde-peau-noir.jpg" 
+          alt="Seconde Peau Noir" 
+          class="w-full cursor-pointer h-[540px]"
+          data-title="seconde peau"
+          data-price="10€"
+          data-description="idéal pour coplayer de peronnage telle que un simpson sans devoir peintre tout son corps"
+          onclick="redirectToArticle(this)"
+          >
           <p class="text-white text-xl">Prix : 10€</p>
         </div>
         <div class="item Autres">
-          <img src="img/accessoire/acce (4).jpg" alt="Épaule plumes" class="w-full h-[540px] cursor-pointer">
-          <p class="text-white text-xl">Prix : 15€</p>
-        </div>
-        <div class="item Torse/Poitrine">
-          <img src="img/accessoire/acce (5).jpg" alt="Binder de poitrine" class="w-full h-[540px] cursor-pointer">
-          <p class="text-white text-xl">Prix : 4€</p>
-        </div>
+          <img src="img/accessoire/acce (4).jpg" 
+          alt="Éspaule plumes" 
+          class="sw-full h-[540px] cursor-pointer"
+          data-title="Epaule en plumes"
+          data-price="15€"
+          data-description="Epaule en plumes ideal pour le cosplay de demon."
+          onclick="redirectToArticsle(this)"
+          >
+          <ps class="text-white text-xl">Prix : 15€</p>
+        </divs>
+        
       </div>
 
-      <!-- Script pour changer la couleur de l'image -->
-      <script>
-        document.getElementById('seconde-peau').addEventListener('click', function () {
-          this.src = this.src.includes('seconde-peau-rouge.png') 
-            ? 'img/accessoire/seconde-peau-noir.jpg' 
-            : 'img/accessoire/seconde-peau-rouge.png';
-        });
-      </script>
+      
+      
     </section>
   </main>
-
+  <script>
+    // Fonction de redirection avec des paramètres dynamiques
+    function redirectToArticle(imageElement) {
+      const title = imageElement.getAttribute('data-title');
+      const price = imageElement.getAttribute('data-price');
+      const description = imageElement.getAttribute('data-description');
+      const imageSrc = imageElement.src;
+  
+      // Construction de l'URL avec les paramètres
+      const params = new URLSearchParams({
+        title,
+        price,
+        description,
+        img: imageSrc, // Notez l'utilisation de "img" pour cohérence
+      });
+  
+      // Redirection vers la page dynamique "article.html"
+      window.location.href = `article.html?${params.toString()}`;
+    }
+    </script>
   <!-- Pied de page -->
   <footer id="footer"></footer>
 
   <!-- Scripts JS -->
   <script src="/js/script.js"></script>
-  <script src="/src/js/filtres.js"></script>
+  <script src="/js/filtres.js"></script>
 </body>
 </html>

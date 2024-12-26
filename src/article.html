@@ -9,42 +9,63 @@
 <body class="bg-gray-800 text-white">
   <main class="p-8">
     <div class="max-w-4xl mx-auto bg-gray-700 p-6 rounded-lg shadow-lg">
-      <h1 class="text-3xl font-bold mb-4 text-center article-title">Article</h1>
+      <!-- Titre de l'article -->
+      <h1 class="text-3xl font-bold mb-4 text-center article-title">Titre de l'article</h1>
+
       <div class="flex flex-col items-center">
         <!-- Image -->
-        <span><img src="" alt="Article" class="article-image w-1/2 mb-4 rounded-lg">
+        <img src="" alt="Article" class="article-image w-1/2 mb-4 rounded-lg">
         
-          <!-- Prix -->
+        <!-- Prix -->
         <p class="text-2xl font-semibold mb-4">Prix : <span class="article-price"></span></p>
+        
+        <!-- Description -->
+        <p class="text-lg text-center article-description"></p>
       </div>
     </div>
   </main>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // Récupération des paramètres d'URL
       const params = new URLSearchParams(window.location.search);
 
-      // Récupération des paramètres
+      const title = params.get('title') || 'Titre non spécifié';
       const price = params.get('price') || 'Prix non spécifié';
+      const description = params.get('description') || 'Description non disponible.';
       const imgSrc = params.get('img');
-      const alt = params.get('alt') || 'Article';
+      const alt = params.get('alt') || 'Image de l\'article';
 
-      // Vérification et mise à jour de l'image
+      // Sélection des éléments DOM
       const articleImage = document.querySelector('.article-image');
+      const articleTitle = document.querySelector('.article-title');
+      const articlePrice = document.querySelector('.article-price');
+      const articleDescription = document.querySelector('.article-description');
+
+      // Mise à jour de l'image
       if (imgSrc) {
         articleImage.src = imgSrc;
         articleImage.onerror = () => {
           console.warn("Image introuvable, remplacement par une image par défaut.");
-          articleImage.src = ''; // Remplacez par le chemin d'une image par défaut
+          articleImage.src = '/src/img/default-image.jpg'; // Remplacez par une image par défaut
         };
       } else {
-        articleImage.src = 'default-image.jpg'; // Image par défaut si aucun paramètre img
+        articleImage.src = '/src/img/default-image.jpg'; // Image par défaut
       }
 
       articleImage.alt = alt;
 
       // Mise à jour des autres éléments
-      document.querySelector('.article-title').textContent = alt;
-      document.querySelector('.article-price').textContent = price;
+      articleTitle.textContent = title;
+      articlePrice.textContent = price;
+      articleDescription.textContent = description;
+    });
+  </script>
+  <!-- Script pour changer la couleur de l'image -->
+  <script>
+    document.getElementById('seconde-peau').addEventListener('click', function () {
+      this.src = this.src.includes('seconde-peau-rouge.png') 
+        ? 'img/accessoire/seconde-peau-noir.jpg' 
+        : 'img/accessoire/seconde-peau-rouge.png';
     });
   </script>
 </body>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
-  <title>Wig</title>
+  <title>Chapeaux/Corne</title>
 </head>
 <body class="bg-gray-800">
   <div id="header"></div>
@@ -50,7 +50,7 @@
         <input type="checkbox" class="text-pink-500 focus:ring-pink-300" value="Autres">
         <span>Autres</span>
       </label>
-    </li>
+</li>
   </ul>
 </aside>
   <!-- Section des images -->
@@ -60,9 +60,16 @@
     <div id="items-container" class="grid grid-cols-3 gap-4">
       <!-- Image 1 -->
       <div>
-        
+
         <div class="item cornes">
-            <img src="img/hat/photo_2024-12-17_13-57-09 (2).jpg" alt="cornes" class="w-full cursor-pointer h-[540px]">
+            <img src="img/hat/photo_2024-12-17_13-57-09 (2).jpg" 
+            alt="cornes" 
+            class="w-full cursor-pointer h-[540px]"
+            data-title="Corne"
+            data-price="45€"
+            data-description="Chapeau cornes "
+            onclick="redirectToArticle(this)"
+            >
             <p class="text-white text-xl"> Prix :45€</p>
           </div>
           <!-- js pour l img seconde-peau -->
@@ -70,40 +77,88 @@
         </div>
       <!-- Image 2 -->
       <div class="item chapeaux">
-        <img src="img/hat/photo_2024-12-17_13-57-09 (3).jpg" alt="chapeau de Luffy" class="w-full h-[540px] cursor-pointer">
-        <p class="text-white text-xl"> Prix :25€</p>
+        <img src="img/hat/photo_2024-12-17_13-57-09 (3).jpg"
+        alt="chapeau de Luffy" 
+        class="w-full h-[540px] cursor-pointer"
+        data-title="Chapeau de  Luffy"
+        data-price="25€"
+        data-description="Chapeau de Luffy"
+        onclick="redirectToArticle(this)"
+        >
+        <p class="text-white text-xl">Prix :25€</p>
       </div>
       <!-- Image 3 -->
       <div class="item chapeaux">
-        <img src="img/hat/photo_2024-12-17_13-57-09 (4).jpg" alt="chapeau One piece" class="w-full h-[540px] cursor-pointer">
-        <p class="text-white text-xl"> Prix :50€</p>
+        <img src="img/hat/photo_2024-12-17_13-57-09 (4).jpg"
+        alt="chapeau One piece"
+        class="w-full h-[540px] cursor-pointer"
+        data-title="Chapeau One piece"
+        data-price="50€"
+        data-description="Chapeau de portgas "
+        onclick="redirectToArticle(this)"
+        >
+        <p class="text-white text-xl">Prix :50€</p>
       </div>
       <!-- Image 4 -->
       <div class="item casquettes">
         <img src="img/hat/photo_2024-12-17_13-57-09.jpg" 
         alt="casquette Marty" 
         class="w-full h-[540px] cursor-pointer"
-        data-title="****"
-        data-price="***€"
-        data-description="Une perruque ****."
+        data-title="casquette retour vers le future"
+        data-price="20€"
+        data-description="Casquettes de Marty vers le future."
         onclick="redirectToArticle(this)"
         >
         <p class="text-white text-xl"> Prix :20€</p>
       </div>
       <!-- Image 5 -->
       <div class="item cornes">
-        <img src="img/hat/photo_2024-12-17_14-51-48 (2).jpg" alt="cornes de Loky" class="w-full h-[540px] cursor-pointer">
+        <img src="img/hat/photo_2024-12-17_14-51-48 (2).jpg" 
+        alt="cornes de Loky" 
+        class="w-full h-[540px] cursor-pointer"
+        data-title="Corne de  ylvie"
+        data-price="25€"
+        data-description="Cornes  de  ilvie de  la  erie  Loki"
+        onclick="redirectToArticle(this)"
+        >
         <p class="text-white text-xl"> Prix :25€</p>
       </div>
       <!-- Image 6 -->
       <div class="item cagoules">
-        <img src="img/hat/photo_2024-12-17_14-51-48.jpg" alt="cagoule de DeadpoolS" class="w-full h-[540px] cursor-pointer">
+        <img src="img/hat/photo_2024-12-17_14-51-48.jpg" 
+        alt="cagoule de DeadpoolS" 
+        class="w-full h-[540px] cursor-pointer"
+        data-title="Cagoule de Deadpool"
+        data-price="50€"
+        data-description="cagoule de Deadpool du  film du même nom"
+        onclick="redirectToArticle(this)"
+        >
         <p class="text-white text-xl"> Prix :50€</p>
       </div>
     </div>
   </section>
 </main>
 
+<script>
+  // Fonction de redirection avec des paramètres dynamiques
+  function redirectToArticle(imageElement) {
+    const title = imageElement.getAttribute('data-title');
+    const price = imageElement.getAttribute('data-price');
+    const description = imageElement.getAttribute('data-description');
+    const imageSrc = imageElement.src;
+
+    // Construction de l'URL avec les paramètres
+    const params = new URLSearchParams({
+      title,
+      price,
+      description,
+      img: imageSrc, // Notez l'utilisation de "img" pour cohérence
+    });
+
+    // Redirection vers la page dynamique "article.html"
+    window.location.href = `article.html?${params.toString()}`;
+  }
+</script>
 
  <!-- Footer Section -->
  <footer id="footer"></footer>

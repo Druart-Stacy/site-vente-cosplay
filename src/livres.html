@@ -1,5 +1,5 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,84 +7,140 @@
   <title>Costumes</title>
 </head>
 <body class="bg-gray-800">
-    <div id="header"></div>
-    <section class="h-[70px]"></section>
-<main class="flex">
-<!-- Section de filtrage -->
-<aside class="w-1/4 bg-gray-600 p-4 border-r border-gray-500">
-  <h2 class="text-xl font-semibold mb-4 text-white">Filtrer par couleur</h2>
-  <ul class="space-y-2">
-    <li>
-      <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-red-500 focus:ring-red-300" value="coutures">
-        <span>Coutures</span>
-      </label>
-    </li>
-    <li>
-      <label class="flex items-center space-x-2  text-white">
-        <input type="checkbox" class="text-green-500 focus:ring-green-300" value="craft">
-        <span>Craft</span>
-      </label>
-    </li>
-    
-  </ul>
-</aside>
-  <!-- Section des images -->
+  <!-- Header -->
+  <div id="header"></div>
 
-  <section class="w-3/4 p-4">
-    <h1 class="text-3xl font-bold text-white mb-4 text-center">Collection d'accessoires</h1>
-    <div class="grid grid-cols-3 gap-4">
-      <!-- Image 1 -->
-      
+  <!-- Spacing section -->
+  <section class="h-[70px]"></section>
+
+  <main class="flex">
+    <!-- Filtering Section -->
+    <aside class="w-1/4 bg-gray-600 p-4 border-r border-gray-500">
+      <h2 class="text-xl font-semibold mb-4 text-white">Filtrer par type</h2>
+      <ul class="space-y-2">
+        <li>
+          <label class="flex items-center space-x-2 text-white">
+            <input type="checkbox" class="text-red-500 focus:ring-red-300" value="coutures">
+            <span>Coutures</span>
+          </label>
+        </li>
+        <li>
+          <label class="flex items-center space-x-2 text-white">
+            <input type="checkbox" class="text-green-500 focus:ring-green-300" value="craft">
+            <span>Craft</span>
+          </label>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Image Section -->
+    <section class="w-3/4 p-4">
+      <h1 class="text-3xl font-bold text-white mb-4 text-center">Collection de livres</h1>
+      <div id="items-container" class="grid grid-cols-3 gap-4">
+        <!-- Item Template -->
+        <div class="item coutures">
+          <img 
+            src="img/livre/livre-co (1).jpg" 
+            alt="Le guide du cosplay" 
+            class="w-full cursor-pointer h-[540px]"
+            data-title="Livre de Nikita Cosplay avec patron"
+            data-price="35.00€"
+            data-description="Livre sur le cosplay"
+            onclick="redirectToArticle(this)"
+          >
+          <p class="text-white text-xl">Prix : 35€</p>
+        </div>
         
         <div class="item coutures">
-            <img src="img/livre/livre-co (1).jpg" alt="le guide du cosplay" class="w-full cursor-pointer h-[540px]">
-            <p class="text-white text-xl"> Prix :35€</p>
-          </div>
-         
-      <!-- Image 2 -->
-      <div class="item coutures">
-        <img src="img/livre/livre-co (2).jpg" alt="cosplay foundations" class="w-full h-[540px] cursor-pointer">
-        <p class="text-white text-xl"> Prix :35€</p>
+          <img 
+            src="img/livre/livre-co (2).jpg" 
+            alt="Cosplay Foundations" 
+            class="w-full cursor-pointer h-[540px]"
+            data-title="Livre pour apprendre les bases de la couture cosplay"
+            data-price="35.00€"
+            data-description="Livre idéal pour toutes personnes qui veulent apprendre le cosplay"
+            onclick="redirectToArticle(this)"
+          >
+          <p class="text-white text-xl">Prix : 35€</p>
+        </div>
+
+        <div class="item coutures">
+          <img 
+            src="img/livre/livre-co (3).jpg" 
+            alt="Cosplay and the Dressing of Identity" 
+            class="w-full cursor-pointer h-[540px]"
+            data-title="Livre couture"
+            data-price="35.00€"
+            data-description="Livre couture"
+            onclick="redirectToArticle(this)"
+          >
+          <p class="text-white text-xl">Prix : 35€</p>
+        </div>
+
+        <div class="item coutures">
+          <img 
+            src="img/livre/livre-co (4).jpg" 
+            alt="Cosplay Base : Comment faire ?" 
+            class="w-full cursor-pointer h-[540px]"
+            data-title="Livre couture"
+            data-price="35.00€"
+            data-description="Livre couture"
+            onclick="redirectToArticle(this)"
+          >
+          <p class="text-white text-xl">Prix : 35€</p>
+        </div>
+
+        <div class="item craft">
+          <img 
+            src="img/livre/livre-co (5).jpg" 
+            alt="Abécédaire du cosplay" 
+            class="w-full cursor-pointer h-[540px]"
+            data-title="Livre craft"
+            data-price="35.00€"
+            data-description="Livre craft"
+            onclick="redirectToArticle(this)"
+          >
+          <p class="text-white text-xl">Prix : 35€</p>
+        </div>
+
+        <div class="item coutures">
+          <img 
+            src="img/livre/livre-co(6).jpg" 
+            alt="The Book of Foam Props" 
+            class="w-full cursor-pointer h-[540px]"
+            data-title="Livre couture"
+            data-price="35.00€"
+            data-description="Livre pour apprendre les bases de la couture"
+            onclick="redirectToArticle(this)"
+          >
+          <p class="text-white text-xl">Prix : 35€</p>
+        </div>
       </div>
-      <!-- Image 3 -->
-      <div class="item coutures">
-        <img src="img/livre/livre-co (3).jpg" alt="cosplay and the dressing of identit" class="w-full h-[540px] cursor-pointer">
-        <p class="text-white text-xl"> Prix :35€</p>
-      </div>
-      <!-- Image 4 -->
-      <div class="item coutures">
-        <img src="img/livre/livre-co (4).jpg" alt="cosplay base comment faire ?" class="w-full h-[540px] cursor-pointer">
-        <p class="text-white text-xl"> Prix :35€</p>
-      </div>
-      <!-- Image 5 -->
-      <div class="item craft">
-        <img src="img/livre/livre-co (5).jpg" alt="abécédaire du cosplay" class="w-full h-[540px] cursor-pointer">
-        <p class="text-white text-xl"> Prix :35€</p>
-      </div>
-      <!-- Image 6 -->
-      <div class="item coutures">
-        <img src="img/livre/livre-co(6).jpg" alt="the book foam props" class="w-full h-[540px] cursor-pointer">
-        <p class="text-white text-xl"> Prix :35€</p>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer id="footer"></footer>
   
-  
-</main>
+  <!-- Scripts -->
+  <script>
+    function redirectToArticle(imageElement) {
+      const title = imageElement.getAttribute('data-title');
+      const price = imageElement.getAttribute('data-price');
+      const description = imageElement.getAttribute('data-description');
+      const imageSrc = imageElement.src;
 
+      const params = new URLSearchParams({
+        title,
+        price,
+        description,
+        img: imageSrc,
+      });
 
- <!-- Footer Section -->
- <footer id="footer"></footer>
- <script src="/js/script.js"></script>
- <script src="/js/filtres.js"></script>
-      
-    </body>
-    </html>
-
-
-
-
-    
-  
- 
+      window.location.href = `article.html?${params.toString()}`;
+    }
+  </script>
+  <script src="/js/script.js"></script>
+  <script src="/js/filtres.js"></script>
+</body>
+</html>

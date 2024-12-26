@@ -50,7 +50,14 @@
       <div>
         
         <div class="item epees">
-            <img src="img/arme/arme (1).jpg" alt="épée genshin impact" class="w-full cursor-pointer h-[540px]">
+            <img src="img/arme/arme (1).jpg" 
+            alt="épée genshin impact" 
+            class="w-full cursor-pointer h-[540px]"
+            data-title="Epée Genshin impact"
+            data-price="60€"
+            data-description="Epée Genshin impact"
+            onclick="redirectToArticle(this)"
+            >
             <p class="text-white text-xl"> Prix :60€</p>
           </div>
           <!-- js pour l img seconde-peau -->
@@ -58,27 +65,62 @@
         </div>
       <!-- Image 2 -->
       <div class="item autres">
-        <img src="img/arme/arme (2).jpg" alt="spetre genshin impact" class="w-full h-[540px] cursor-pointer">
+        <img src="img/arme/arme (2).jpg" 
+        alt="spetre genshin impact" 
+        class="w-full h-[540px] cursor-pointer"
+        data-title="spetre genshin impact"
+        data-price="60€"
+        data-description="spetre genshin impact"
+        onclick="redirectToArticle(this)"
+        >
         <p class="text-white text-xl"> Prix :60€</p>
       </div>
       <!-- Image 3 -->
       <div class="item epees">
-        <img src="img/arme/arme (3).jpg" alt="épée de Link" class="w-full h-[540px] cursor-pointer">
+        <img src="img/arme/arme (3).jpg" 
+        alt="épée de Link" 
+        class="w-full h-[540px] cursor-pointer"
+        data-title="Epée de Link"
+        data-price="50€"
+        data-description="Epée"
+        onclick="redirectToArticle(this)"
+        >
         <p class="text-white text-xl"> Prix :50€</p>
       </div>
       <!-- Image 4 -->
       <div class="item armes">
-        <img src="img/arme/arme (5).jpg" alt="arme à feu" class="w-full h-[540px] cursor-pointer">
+        <img src="img/arme/arme (5).jpg" 
+        alt="arme à feu" 
+        class="w-full h-[540px] cursor-pointer"
+        data-title="Arme"
+        data-price="30€"
+        data-description="arme fictive"
+        onclick="redirectToArticle(this)"  
+        >
         <p class="text-white text-xl"> Prix :30€</p>
       </div>
       <!-- Image 5 -->
       <div class="item shuriken">
-        <img src="img/arme/arme (6).jpg" alt="shuriken" class="w-full h-[540px] cursor-pointer">
+        <img src="img/arme/arme (6).jpg" 
+        alt="shuriken" 
+        class="w-full h-[540px] cursor-pointer"
+        data-title="shuriken"
+        data-price="20€"
+        data-description="shuriken en platique imitation métal"
+        onclick="redirectToArticle(this)"
+        >
         <p class="text-white text-xl"> Prix :20€</p>
       </div>
       <!-- Image 6 -->
       <div class="item armes">
-        <img src="img/arme/arme (7).jpg" alt="arme à feu" class="w-full h-[540px] cursor-pointer">
+        <img src="img/arme/arme (7).jpg" 
+        alt="arme à feu" 
+        class="w-full h-[540px] cursor-pointer"
+        data-title="arme"
+        data-price="30€"
+        data-description="arme fictive en platique"
+        onclick="redirectToArticle(this)"
+        >
         <p class="text-white text-xl"> Prix :30€</p>
       </div>
     </div>
@@ -86,7 +128,26 @@
   
   
 </main>
+<script>
+  // Fonction de redirection avec des paramètres dynamiques
+  function redirectToArticle(imageElement) {
+    const title = imageElement.getAttribute('data-title');
+    const price = imageElement.getAttribute('data-price');
+    const description = imageElement.getAttribute('data-description');
+    const imageSrc = imageElement.src;
 
+    // Construction de l'URL avec les paramètres
+    const params = new URLSearchParams({
+      title,
+      price,
+      description,
+      img: imageSrc, // Notez l'utilisation de "img" pour cohérence
+    });
+
+    // Redirection vers la page dynamique "article.html"
+    window.location.href = `article.html?${params.toString()}`;
+  }
+</script>
 
  <!-- Footer Section -->
  <footer id="footer"></footer>
