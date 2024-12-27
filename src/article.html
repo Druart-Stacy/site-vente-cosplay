@@ -46,7 +46,7 @@
         articleImage.src = imgSrc;
         articleImage.onerror = () => {
           console.warn("Image introuvable, remplacement par une image par défaut.");
-          articleImage.src = '/src/img/default-image.jpg'; // Remplacez par une image par défaut
+          articleImage.src = ''; // Remplacez par une image par défaut
         };
       } else {
         articleImage.src = ''; // Image par défaut
