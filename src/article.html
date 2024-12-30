@@ -1,10 +1,10 @@
 <!doctype html>
-<html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
-  <title>article</title>
+  <title>Article</title>
 </head>
 <body class="bg-gray-800 text-white">
   <main class="p-8">
@@ -22,51 +22,74 @@
         <!-- Description -->
         <p class="text-lg text-center article-description"></p>
       </div>
+
+      <!-- Pointure (cachée par défaut) -->
+      <div id="pointure-section" class="hidden mt-4">
+        <h2 class="text-xl text-center mb-4">Pointures disponibles :</h2>
+        <p class="text-lg text-center article-pointure"></p>
+      </div>
+
+      <!-- Taille (cachée par défaut) -->
+      <div id="taille-section" class="hidden mt-4">
+        <h2 class="text-xl text-center mb-4">Tailles disponibles :</h2>
+        <p class="text-lg text-center article-taille"></p>
+      </div>
     </div>
   </main>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Récupération des paramètres d'URL
       const params = new URLSearchParams(window.location.search);
 
+      // Récupération des données depuis l'URL
       const title = params.get('title') || 'Titre non spécifié';
       const price = params.get('price') || 'Prix non spécifié';
       const description = params.get('description') || 'Description non disponible.';
       const imgSrc = params.get('img');
+      const pointure = params.get('pointure');
+      const sizes = params.get('sizes');
       const alt = params.get('alt') || 'Image de l\'article';
 
-      // Sélection des éléments DOM
+      // Sélection des éléments HTML
       const articleImage = document.querySelector('.article-image');
       const articleTitle = document.querySelector('.article-title');
       const articlePrice = document.querySelector('.article-price');
       const articleDescription = document.querySelector('.article-description');
+      const pointureSection = document.getElementById('pointure-section');
+      const tailleSection = document.getElementById('taille-section');
+      const articlePointure = document.querySelector('.article-pointure');
+      const articleTaille = document.querySelector('.article-taille');
 
-      // Mise à jour de l'image
+      // Configuration de l'image
       if (imgSrc) {
         articleImage.src = imgSrc;
         articleImage.onerror = () => {
           console.warn("Image introuvable, remplacement par une image par défaut.");
-          articleImage.src = ''; // Remplacez par une image par défaut
+          articleImage.src = 'default-image.jpg'; // Image de remplacement par défaut
         };
       } else {
-        articleImage.src = ''; // Image par défaut
+        articleImage.src = 'default-image.jpg'; // Image par défaut si pas de src
       }
-
       articleImage.alt = alt;
 
-      // Mise à jour des autres éléments
+      // Remplissage des informations
       articleTitle.textContent = title;
       articlePrice.textContent = price;
       articleDescription.textContent = description;
+
+      // Gestion des pointures
+      if (pointure) {
+        articlePointure.textContent = pointure;
+        pointureSection.classList.remove('hidden'); // Afficher les pointures si disponibles
+      }
+
+      // Gestion des tailles
+      if (sizes) {
+        articleTaille.textContent = sizes;
+        tailleSection.classList.remove('hidden'); // Afficher les tailles si disponibles
+      }
     });
   </script>
-  <!-- Script pour changer la couleur de l'image -->
-  <script>
-    document.getElementById('seconde-peau').addEventListener('click', function () {
-      this.src = this.src.includes('seconde-peau-rouge.png') 
-        ? 'img/accessoire/seconde-peau-noir.jpg' 
-        : 'img/accessoire/seconde-peau-rouge.png';
-    });
-  </script>
+  
 </body>
 </html>

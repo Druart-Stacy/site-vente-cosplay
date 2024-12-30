@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <title>Article</title>
+</head>
+<body class="bg-gray-800 text-white">
+  <main class="p-8">
+    <div class="max-w-4xl mx-auto bg-gray-700 p-6 rounded-lg shadow-lg">
+      <!-- Titre de l'article -->
+      <h1 class="text-3xl font-bold mb-4 text-center article-title">Seconde peau</h1>
+
+      <div class="flex flex-col items-center">
+        <div class="card flex flex-col items-center justify-center">
+          <!-- Image centrée -->
+          <img src="img/accessoire/seconde-peau-noir.jpg" 
+               class="article-image w-1/2 mb-4 rounded-lg" 
+               alt="Seconde peau">
+          <!-- Buttons to change the image -->
+          <div class="flex space-x-2">
+            <button id="changeImageButtonRouge" class="bg-gray-800 p-2 rounded text-white">Rouge</button>
+            <button id="changeImageButtonBleu" class="bg-gray-800 p-2 rounded text-white">Bleu</button>
+            <button id="changeImageButtonJaune" class="bg-gray-800 p-2 rounded text-white">Jaune</button>
+            <button id="changeImageButtonNoir" class="bg-gray-800 p-2 rounded text-white">Noir</button>
+          </div>
+        </div>
+        
+        <!-- Prix -->
+        <p class="text-2xl font-semibold mb-4">Prix : 10€<span class="article-price"></span></p>
+        
+        <!-- Description -->
+        <p class="text-lg text-center article-description"></p>
+      </div>
+
+      <!-- Taille (cachée par défaut) -->
+      <div id="taille-section" class="hidden mt-4">
+        <h2 class="text-xl text-center mb-4">Tailles disponibles :</h2>
+        <p class="text-lg text-center article-taille"></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- jQuery and custom script -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // Quand le bouton "Rouge" est cliqué, changez la source de l'image en rouge
+      $("#changeImageButtonRouge").click(function(){
+        $(".article-image").attr("src", "img/accessoire/seconde-peau-rouge.jpg");
+      });
+
+      // Quand le bouton "Bleu" est cliqué, changez la source de l'image en bleu
+      $("#changeImageButtonBleu").click(function(){
+        $(".article-image").attr("src", "img/accessoire/seconde-peau-bleu.jpg");
+      });
+
+      // Quand le bouton "Jaune" est cliqué, changez la source de l'image en jaune
+      $("#changeImageButtonJaune").click(function(){
+        $(".article-image").attr("src", "img/accessoire/seconde-peau-jaune.jpg");
+      });
+
+      // Quand le bouton "Noir" est cliqué, changez la source de l'image en noir
+      $("#changeImageButtonNoir").click(function(){
+        $(".article-image").attr("src", "img/accessoire/seconde-peau-noir.jpg");
+      });
+    });
+  </script>
+</body>
+</html>

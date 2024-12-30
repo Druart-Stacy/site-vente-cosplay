@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
-  <title>Chapeaux/Casques</title>
+  <title>Bottes/chaussures</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+  </style>
 </head>
 <body class="bg-gray-800">
   <!-- Header -->
@@ -20,31 +25,31 @@
       <ul class="space-y-2">
         <li>
           <label class="flex items-center space-x-2 text-white">
-            <input type="checkbox" class="text-blue-500 focus:ring-blue-300" value="autres">
+            <input type="checkbox" value="geta" class="filter-checkbox">
             <span>Geta</span>
           </label>
         </li>
         <li>
           <label class="flex items-center space-x-2 text-white">
-            <input type="checkbox" class="text-red-500 focus:ring-red-300" value="chaussures">
+            <input type="checkbox" value="chaussures" class="filter-checkbox">
             <span>Chaussures</span>
           </label>
         </li>
         <li>
           <label class="flex items-center space-x-2 text-white">
-            <input type="checkbox" class="text-green-500 focus:ring-green-300" value="bottes-basse">
+            <input type="checkbox" value="bottes-basse" class="filter-checkbox">
             <span>Bottes basses</span>
           </label>
         </li>
         <li>
           <label class="flex items-center space-x-2 text-white">
-            <input type="checkbox" class="text-green-500 focus:ring-green-300" value="bottes-haute">
+            <input type="checkbox" value="bottes-haute" class="filter-checkbox">
             <span>Bottes hautes</span>
           </label>
         </li>
         <li>
           <label class="flex items-center space-x-2 text-white">
-            <input type="checkbox" class="text-green-500 focus:ring-green-300" value="autres">
+            <input type="checkbox" value="autres" class="filter-checkbox">
             <span>Autres</span>
           </label>
         </li>
@@ -54,116 +59,97 @@
     <!-- Image Section -->
     <section class="w-3/4 p-4">
       <h1 class="text-3xl font-bold text-white mb-4 text-center">Collection d'accessoires</h1>
-      <div class="grid grid-cols-3 gap-4">
-        <!-- Item 1 -->
-        <div class="item bottes-haute">
-          <img 
-            src="img/shows/choe (1).jpg" 
-            alt="Bottes" 
-            class="w-full cursor-pointer h-[540px]"
-            data-title="Bottes hautes"
-            data-price="30€"
-            data-description="Bottes hautes"
-            onclick="redirectToArticle(this)"
-          >
-          <p class="text-white text-xl">Prix : 30€</p>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="item chaussures">
-          <img 
-            src="img/shows/choe (1).webp" 
-            alt="Chaussures Kitagawa Marin" 
-            class="w-full h-[540px] cursor-pointer"
-            data-title="Chaussures Kitagawa Marin"
-            data-price="20€"
-            data-description="Chaussures Kitagawa Marin"
-            onclick="redirectToArticle(this)"
-          >
-          <p class="text-white text-xl">Prix : 20€</p>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="item bottes-haute">
-          <img 
-            src="img/shows/choe (2).jpg" 
-            alt="Bottes Genshin Impact" 
-            class="w-full h-[540px] cursor-pointer"
-            data-title="Bottes Genshin Impact"
-            data-price="30€"
-            data-description="Bottes Genshin Impact"
-            onclick="redirectToArticle(this)"
-          >
-          <p class="text-white text-xl">Prix : 30€</p>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="item chaussures">
-          <img 
-            src="img/shows/choe (3).jpg" 
-            alt="Chaussures du Joker" 
-            class="w-full h-[540px] cursor-pointer"
-            data-title="Chaussures du Joker"
-            data-price="20€"
-            data-description="Chaussures du Joker"
-            onclick="redirectToArticle(this)"
-          >
-          <p class="text-white text-xl">Prix : 20€</p>
-        </div>
-
-        <!-- Item 5 -->
-        <div class="item bottes-haute">
-          <img 
-            src="img/shows/choe (4).jpg" 
-            alt="Bottes" 
-            class="w-full h-[540px] cursor-pointer"
-            data-title="Bottes hautes"
-            data-price="30€"
-            data-description="Bottes hautes"
-            onclick="redirectToArticle(this)"
-          >
-          <p class="text-white text-xl">Prix : 30€</p>
-        </div>
-
-        <!-- Item 6 -->
-        <div class="item bottes-haute">
-          <img 
-            src="img/shows/choe (5).jpg" 
-            alt="Bottes de Spy Family" 
-            class="w-full h-[540px] cursor-pointer"
-            data-title="Bottes hautes"
-            data-price="30€"
-            data-description="Bottes hautes"
-            onclick="redirectToArticle(this)"
-          >
-          <p class="text-white text-xl">Prix : 30€</p>
-        </div>
+      <div id="gallery" class="grid grid-cols-3 gap-4">
+        <!-- Items dynamically added -->
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer id="footer"></footer>
-
   <!-- Scripts -->
   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Data for shoes and boots
+      const items = [
+        { type: 'bottes-haute', 
+        title: 'Bottes hautes', 
+        price: '30€', 
+        description: 'Bottes hautes', 
+        image: 'img/shows/choe (1).jpg', 
+        sizes: [38,39,40] 
+      },
+        { type: 'chaussures', title: 'Chaussures Kitagawa Marin', price: '20€', description: 'Chaussures Kitagawa Marin', image: 'img/shows/choe (1).webp', sizes: [38,39, 40] },
+        { type: 'bottes-haute', title: 'Bottes Genshin Impact', price: '30€', description: 'Bottes Genshin Impact', image: 'img/shows/choe (2).jpg', sizes: [38, 39,40] },
+        { type: 'chaussures', title: 'Chaussures du Joker', price: '20€', description: 'Chaussures du Joker', image: 'img/shows/choe (3).jpg', sizes: [38,39, 40] },
+        { type: 'bottes-haute', title: 'Bottes hautes', price: '30€', description: 'Bottes hautes', image: 'img/shows/choe (4).jpg', sizes: [38, 39, 40] },
+        { type: 'bottes-haute', title: 'Bottes Spy Family', price: '30€', description: 'Bottes Spy Family', image: 'img/shows/choe (5).jpg', sizes: [38,39, 40] }
+      ];
+
+      // Populate gallery
+      const gallery = document.getElementById('gallery');
+      items.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = `item ${item.type}`;
+        itemDiv.innerHTML = `
+          <img 
+            src="${item.image}" 
+            alt="${item.title}" 
+            class="w-full cursor-pointer h-[540px]"
+            data-title="${item.title}"
+            data-price="${item.price}"
+            data-description="${item.description}"
+            data-pointure="${item.sizes.join(', ')}"
+            onclick="redirectToArticle(this)"
+          >
+          <p class="text-white text-xl">Prix : ${item.price}</p>
+          <p class="text-white text-sm">Pointures disponibles : ${item.sizes.join(', ')}</p>
+        `;
+        gallery.appendChild(itemDiv);
+      });
+
+      // Filtering functionality
+      const checkboxes = document.querySelectorAll('.filter-checkbox');
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+          const activeFilters = Array.from(checkboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value);
+
+          document.querySelectorAll('.item').forEach(item => {
+            const itemType = item.classList[1];
+            if (activeFilters.length === 0 || activeFilters.includes(itemType)) {
+              item.style.display = '';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+
+    // Redirect to article
     function redirectToArticle(imageElement) {
       const title = imageElement.getAttribute('data-title');
       const price = imageElement.getAttribute('data-price');
       const description = imageElement.getAttribute('data-description');
       const imageSrc = imageElement.src;
+      const pointure = imageElement.getAttribute('data-pointure');
 
       const params = new URLSearchParams({
         title,
         price,
         description,
-        img: imageSrc
+        img: imageSrc,
+        pointure
       });
 
       window.location.href = `article.html?${params.toString()}`;
     }
   </script>
+
   <script src="/js/script.js"></script>
   <script src="/js/filtres.js"></script>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
 </body>
 </html>

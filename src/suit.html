@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
-  <title>Costumes</title>
+  <title>Tenues</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+  </style>
 </head>
 <body class="bg-gray-800">
   <!-- Header -->
@@ -20,25 +25,25 @@
       <ul class="space-y-2">
         <li>
           <label class="flex items-center space-x-2 text-white">
-            <input type="checkbox" class="text-red-500 focus:ring-red-300" value="tenue-integrale">
+            <input type="checkbox" value="tenue-integrale" class="filter-checkbox">
             <span>Tenue intégrale</span>
           </label>
         </li>
         <li>
           <label class="flex items-center space-x-2 text-white">
-            <input type="checkbox" class="text-green-500 focus:ring-green-300" value="tenue-2-parties">
+            <input type="checkbox" value="tenue-2-parties" class="filter-checkbox">
             <span>Tenue 2 parties ou plus</span>
           </label>
         </li>
         <li>
           <label class="flex items-center space-x-2 text-white">
-            <input type="checkbox" class="text-green-500 focus:ring-green-300" value="kimonos">
+            <input type="checkbox" value="kimonos" class="filter-checkbox">
             <span>Kimonos</span>
           </label>
         </li>
         <li>
           <label class="flex items-center space-x-2 text-white">
-            <input type="checkbox" class="text-green-500 focus:ring-green-300" value="autres">
+            <input type="checkbox" value="autres" class="filter-checkbox">
             <span>Autres</span>
           </label>
         </li>
@@ -47,119 +52,93 @@
 
     <!-- Image Section -->
     <section class="w-3/4 p-4">
-      <h1 class="text-3xl font-bold text-white mb-4 text-center">Collection d'accessoires</h1>
-      <div id="items-container" class="grid grid-cols-3 gap-4">
-        <!-- Item 1 -->
-        <div class="item kimonos">
-          <img 
-            src="img/tenue/tenue-b (1).jpg" 
-            alt="Costume de Bleach" 
-            class="w-full cursor-pointer h-[540px]"
-            data-title="Cosplay de Bleach"
-            data-price="25€"
-            data-description="Cosplay Bleach"
-            data-type="suit"
-            data-sizes="M,L,XL,Grisé"
-            onclick="redirectToArticle(this)"
-          >
-          <p class="text-white text-xl">Prix : 25€</p>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="item tenue-integrale">
-          <img 
-            src="img/tenue/tenue-b (2).jpg" 
-            alt="Costume de Deadpool" 
-            class="w-full cursor-pointer h-[540px]"
-            data-title="Cosplay de Deadpool"
-            data-price="250€"
-            data-description="Cosplay Deadpool"
-            onclick="redirectToArticle(this)"
-          >
-          <p class="text-white text-xl">Prix : 250€</p>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="item tenue-2-parties">
-          <img 
-            src="img/tenue/tenue-b (3).jpg" 
-            alt="Costume de Natsu Fairy Tail" 
-            class="w-full cursor-pointer h-[540px]"
-            data-title="Cosplay de Natsu Fairy Tail"
-            data-price="40€"
-            data-description="Cosplay Fairy Tail"
-            onclick="redirectToArticle(this)"
-          >
-          <p class="text-white text-xl">Prix : 40€</p>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="item tenue-2-parties">
-          <img 
-            src="img/tenue/tenue-complete (1).jpg" 
-            alt="Costume de Jinx" 
-            class="w-full cursor-pointer h-[540px]"
-            data-title="Cosplay de Jinx"
-            data-price="50€"
-            data-description="Cosplay de Jinx"
-            onclick="redirectToArticle(this)"
-          >
-          <p class="text-white text-xl">Prix : 50€</p>
-        </div>
-
-        <!-- Item 5 -->
-        <div class="item tenue-2-parties">
-          <img 
-            src="img/tenue/tenue-complete (1).webp" 
-            alt="Costume de Jujutsu Kaisen" 
-            class="w-full cursor-pointer h-[540px]"
-            data-title="Cosplay Jujutsu Kaisen"
-            data-price="25€"
-            data-description="Cosplay Jujutsu Kaisen"
-            onclick="redirectToArticle(this)"
-          >
-          <p class="text-white text-xl">Prix : 25€</p>
-        </div>
-
-        <!-- Item 6 -->
-        <div class="item tenue-2-parties">
-          <img 
-            src="img/tenue/tenue-complete (3).jpg" 
-            alt="Costume de Vendredi 13" 
-            class="w-full cursor-pointer h-[540px]"
-            data-title="Cosplay de Vendredi 13"
-            data-price="50€"
-            data-description="Cosplay de Vendredi 13"
-            onclick="redirectToArticle(this)"
-          >
-          <p class="text-white text-xl">Prix : 50€</p>
-        </div>
+      <h1 class="text-3xl font-bold text-white mb-4 text-center">Collection de Tenues</h1>
+      <div id="gallery" class="grid grid-cols-3 gap-4">
+        <!-- Items dynamically added -->
       </div>
     </section>
   </main>
 
-  <!-- Footer Section -->
-  <footer id="footer"></footer>
-
   <!-- Scripts -->
   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Data for costumes
+      const items = [
+        { type: 'tenue-integrale', title: 'Tenue Deadpool', price: '250€', description: 'Cosplay Deadpool', image: 'img/tenue/tenue-b (2).jpg', sizes: ['S', 'M', 'L','XL'] },
+        { type: 'tenue-2-parties', title: 'Tenue Natsu', price: '40€', description: 'Cosplay Fairy Tail', image: 'img/tenue/tenue-b (3).jpg', sizes: ['S', 'M', 'L','XL'] },
+        { type: 'kimonos', title: 'Kimono Bleach', price: '25€', description: 'Cosplay Bleach', image: 'img/tenue/tenue-b (1).jpg', sizes: ['S', 'M', 'L','XL'] },
+        { type: 'tenue-2-parties', title: 'Tenue Jinx', price: '50€', description: 'Cosplay Jinx', image: 'img/tenue/tenue-complete (1).jpg', sizes: ['S', 'M', 'L','XL'] },
+        { type: 'tenue-2-parties', title: 'Tenue Vendredi 13', price: '50€', description: 'Cosplay Vendredi 13', image: 'img/tenue/tenue-complete (3).jpg', sizes: ['S', 'M', 'L','XL'] },
+        { type: 'kimonos', title: 'Kimono Jujutsu Kaisen', price: '25€', description: 'Cosplay Jujutsu Kaisen', image: 'img/tenue/tenue-complete (1).webp', sizes: ['S', 'M', 'L','XL'] }
+      ];
+
+      // Populate gallery
+      const gallery = document.getElementById('gallery');
+      items.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = `item ${item.type}`;
+        itemDiv.innerHTML = `
+          <img 
+            src="${item.image}" 
+            alt="${item.title}" 
+            class="w-full cursor-pointer h-[540px]"
+            data-title="${item.title}"
+            data-price="${item.price}"
+            data-description="${item.description}"
+            data-sizes="${item.sizes.join(', ')}"
+            onclick="redirectToArticle(this)"
+          >
+          <p class="text-white text-xl">Prix : ${item.price}</p>
+          <p class="text-white text-sm">Tailles disponibles : ${item.sizes.join(', ')}</p>
+        `;
+        gallery.appendChild(itemDiv);
+      });
+
+      // Filtering functionality
+      const checkboxes = document.querySelectorAll('.filter-checkbox');
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+          const activeFilters = Array.from(checkboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value);
+
+          document.querySelectorAll('.item').forEach(item => {
+            const itemType = item.classList[1];
+            if (activeFilters.length === 0 || activeFilters.includes(itemType)) {
+              item.style.display = '';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+
+    // Redirect to article page
     function redirectToArticle(imageElement) {
       const title = imageElement.getAttribute('data-title');
       const price = imageElement.getAttribute('data-price');
       const description = imageElement.getAttribute('data-description');
       const imageSrc = imageElement.src;
+      const sizes = imageElement.getAttribute('data-sizes');
 
       const params = new URLSearchParams({
         title,
         price,
         description,
-        img: imageSrc
+        img: imageSrc,
+        sizes
       });
 
       window.location.href = `article.html?${params.toString()}`;
     }
+
   </script>
+
   <script src="/js/script.js"></script>
   <script src="/js/filtres.js"></script>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
 </body>
 </html>
